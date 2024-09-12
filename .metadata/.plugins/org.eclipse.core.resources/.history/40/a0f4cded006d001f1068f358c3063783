@@ -1,0 +1,13 @@
+package space.jdbc.Card;
+
+import java.util.List;
+
+public class CardApprovalDetailsDao {
+
+	boolean insert(CardApprovalDetailsDao cardapprovaldetails);
+	List<CardApprovalDetailsDao> findAll();
+	Card findById(String ApprovalNumber);
+	
+	boolean update(CardApprovalDetailsDao cardapprovaldetails);
+	boolean deleteById(String ApprovalNumber);
+}

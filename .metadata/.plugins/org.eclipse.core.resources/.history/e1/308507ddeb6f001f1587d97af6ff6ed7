@@ -1,0 +1,18 @@
+package space.jdbc.precure;
+
+import java.util.List;
+
+import space.jdbc.memo.Memo;
+
+public interface PrecureDao {
+
+	boolean insert(Precure precure);
+	
+	List<Precure> findAll();
+	
+	Precure findById(int id);
+	
+	boolean update(String item,String name);
+	
+	boolean deleteById(int id);
+}

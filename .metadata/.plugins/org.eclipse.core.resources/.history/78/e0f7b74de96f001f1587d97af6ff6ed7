@@ -1,0 +1,26 @@
+package space.jdbc.precure;
+
+import java.sql.Date;
+import java.util.List;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		PrecureDao precureDao = new JdbcPrecureDao();
+		
+		Precure precure = new Precure();
+		
+		precure.setId(3);
+		precure.setName("큐어 이그렛");
+		precure.setAge(15);
+		precure.setColor("은색");
+		precure.setType("날개");
+		precure.setBirth(Date.valueOf("2025-11-20"));
+		precure.setItem("믹스 코뮨");
+		precure.setComments("煌めく銀の翼");
+		
+		precureDao.insert(precure);
+
+	}
+
+}

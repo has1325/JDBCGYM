@@ -1,0 +1,10 @@
+package space.jdbc.basic;
+
+public class FindAll {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

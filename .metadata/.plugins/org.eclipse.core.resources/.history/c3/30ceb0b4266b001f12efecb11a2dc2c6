@@ -1,0 +1,25 @@
+package space.jdbc.memo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Delete {
+	public static void main(String[] args)  {
+		boolean result = false;
+		
+		try(Connection connection = DataSource.getDataSource();
+				PreparedStatement pStatement
+					= connection.prepareStatement("DELETE FROM MEMO WHERE id = ?")){
+			Long id = 3L;
+			
+			pStatement.setLong(1, id);
+			
+			pStatement.executeUpdate();
+			
+			return result;
+			connection.close();
+	}
+
+}

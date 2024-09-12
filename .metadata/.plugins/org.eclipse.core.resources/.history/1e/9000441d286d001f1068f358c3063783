@@ -1,0 +1,33 @@
+package ch01.sec08;
+import java.util.Scanner;
+
+public class MusicApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        MusicComposer composer = new MusicComposer();
+
+        System.out.println("AI 음악 생성 앱에 오신 것을 환영합니다!");
+        System.out.println("원하는 음악 스타일을 선택하세요 (예: 클래식, 팝, 재즈): ");
+        String style = scanner.nextLine();
+
+        System.out.println("원하는 음악 분위기를 선택하세요 (예: 행복한, 슬픈, 신나는): ");
+        String mood = scanner.nextLine();
+
+        // AI 기반으로 음악 생성
+        String generatedMusic = composer.composeMusic(style, mood);
+        System.out.println("생성된 음악: \n" + generatedMusic);
+
+        System.out.println("음악을 저장하시겠습니까? (y/n): ");
+        String save = scanner.nextLine();
+
+        if(save.equalsIgnoreCase("y")) {
+            System.out.println("음악이 저장되었습니다!");
+            // 파일 저장 로직 추가 가능
+        } else {
+            System.out.println("음악이 저장되지 않았습니다.");
+        }
+
+        scanner.close();
+    }
+}
+

@@ -1,0 +1,10 @@
+package space.jdbc.memo;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package space.jdbc.precure;
+
+import java.sql.Date;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		JdbcPrecureDao precureDao = new JdbcPrecureDao();
+		
+		Precure precure = new Precure();
+		
+//		precure.setId(8);
+		precure.setName("큐어 드림");
+//		precure.setAge(15);
+//		precure.setColor("청록");
+//		precure.setType("백합");
+//		precure.setBirth(Date.valueOf("2025-11-05"));
+		precure.setItem("큐어모");
+//		precure.setComments("怖くない怖くない");
+		
+//		precureDao.insert(precure);
+		
+//		List<Precure> precureDaos = precureDao.findAll();
+//		
+//		for (Precure precure2 : precureDaos) {
+//			System.out.println(precure2);
+//		}
+		
+//		System.out.println(precureDao.findById(4));
+		
+		precureDao.update(precure);
+		
+
+	}
+
+}

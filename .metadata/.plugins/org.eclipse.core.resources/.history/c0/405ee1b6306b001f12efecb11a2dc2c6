@@ -1,0 +1,5 @@
+package memo1;
+
+public interface MemberDAO {
+
+}

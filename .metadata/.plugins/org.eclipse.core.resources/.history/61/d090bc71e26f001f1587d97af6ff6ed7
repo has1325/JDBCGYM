@@ -1,0 +1,5 @@
+package space.jdbc.precure;
+
+public interface PrecureDao {
+
+}

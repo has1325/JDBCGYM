@@ -1,0 +1,28 @@
+1725331816616	Rename type 'Member'
+1725331827671	Rename type 'MemberMemo'
+1725332015920	Rename type 'Prouct'
+1725410084274	Delete element
+1725411343628	Copy compilation unit
+1725418374297	Copy compilation unit
+1725439914204	Copy compilation unit
+1725499945654	Delete element
+1725500366298	Copy compilation unit
+1725500392792	Rename type 'Delete'
+1725500472098	Rename type 'deleteById'
+1725501377023	Copy compilation unit
+1725504257462	Rename type 'MemberDAO'
+1725505104573	Copy compilation unit
+1725505139283	Rename type 'JdbcMemoDao'
+1725505388667	Copy compilation unit
+1725505768044	Copy compilation unit
+1725505865921	Copy compilation unit
+1725506429378	Copy compilation unit
+1725507567077	Copy compilation unit
+1725507692003	Copy compilation unit
+1725508431029	Rename package 'memo1'
+1725587178898	Rename type 'Customer'
+1725587205711	Rename type 'Customer1'
+1725588773192	Rename type 'Customer'
+1725600208509	Delete element
+1725602679841	Delete element
+1725703303653	Move compilation unit

@@ -1,0 +1,62 @@
+package space.jdbc.member1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import space.jdbc.memo.DataSource;
+
+public class JdbcCustomerDao implements CustomerDao {
+
+	@Override
+	public boolean insert(Customer customer) {
+		boolean result = false;
+		
+		try(Connection connection = DataSource.getDataSource();
+				PreparedStatement pStatement 
+					= connection.prepareStatement("INSERT INTO CUSTOMER1 (ID, PASSWORD, REGDATE, UPDATEDATE)"
+							+ " VALUES (?, ?, SYSDATE, SYSTIMESTAMP)")) {
+			
+			pStatement.setString(1, customer.getId());
+			pStatement.setString(2, customer.getPassword());
+			
+			int rows = pStatement.executeUpdate();
+			
+			if(rows > 0) {
+				result = true;
+			}
+			
+		}	catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		return false;
+	}
+
+	@Override
+	public List<Customer> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Customer findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(Customer customer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteById(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

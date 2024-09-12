@@ -1,0 +1,59 @@
+package space.jdbc.Card;
+
+import java.sql.Connection;
+
+public class JdbcCardApprovalDetailsDao implements CardApprovalDetailsDao {
+
+	@Override
+	public boolean insert(CardApprovalDetails cardapprovaldetails) {
+		boolean result = false;
+		
+		try(Connection connection = DataSource.getDataSource();
+				PreparedStatement pStatement 
+					= connection.prepareStatement("INSERT INTO CARDAPPROVALDETAILS (APPROVALNUMBER,COMPANYNAME,APPROVALDATE,CARDNUMBER)"
+							+ "VALUES (?, ?, ?, ?)")) {
+			
+			pStatement.setString(1, cardapprovaldetails.getApprovalNumber());
+			pStatement.setString(2, cardapprovaldetails.getCompanyName());
+			pStatement.setDate(3, cardapprovaldetails.getApprovalDate());
+			pStatement.setString(4, cardapprovaldetails.getCardNumber());
+			
+			int rows = pStatement.executeUpdate();
+			
+			if(rows > 0) {
+				result = true;
+			}
+			
+		}	catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public List<CardApprovalDetailsDao> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Card findById(String ApprovalNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(CardApprovalDetailsDao cardapprovaldetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteById(String ApprovalNumber) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+}

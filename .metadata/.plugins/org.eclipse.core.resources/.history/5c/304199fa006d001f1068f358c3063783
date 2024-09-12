@@ -1,0 +1,6 @@
+package space.jdbc.Card;
+
+public class JdbcCardApprovalDetailsDao implements CardApprovalDetailsDao {
+	
+	
+}

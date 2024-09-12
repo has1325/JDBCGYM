@@ -1,0 +1,13 @@
+package space.jdbc.gym;
+
+import java.util.List;
+
+public interface TrainerInterface {
+	
+	boolean insert(Admin admin);
+	List<Admin> findAll();
+	Admin findById(String id);
+	
+	boolean update(Charge_List charge_list);
+	boolean deleteById(String id);
+}

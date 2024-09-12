@@ -1,0 +1,15 @@
+package 하성;
+
+import java.util.List;
+
+public interface Charge_ListDao {
+	
+	boolean insert(Charge_List chargeList);
+	
+	List<Charge_List> findAll();
+	Charge_List findByManager_num(int chargeList);
+	
+	boolean update(Charge_List chargeList);
+	
+	boolean deleteByCharge_Num(int chargeList);
+}

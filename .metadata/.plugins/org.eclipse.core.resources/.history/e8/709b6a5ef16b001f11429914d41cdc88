@@ -1,0 +1,17 @@
+package space.jdbc.member1;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		
+		CustomerDao customerDao = new JdbcCustomerDao();
+		
+		Customer customer = new Customer();
+		
+		customer.setId("D");
+		customer.setPassword("1234");
+		
+		customerDao.insert(customer);
+	}
+
+}

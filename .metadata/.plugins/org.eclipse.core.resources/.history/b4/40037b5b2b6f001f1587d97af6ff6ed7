@@ -1,0 +1,5 @@
+package 하성;
+
+public interface ChargeDao {
+
+}

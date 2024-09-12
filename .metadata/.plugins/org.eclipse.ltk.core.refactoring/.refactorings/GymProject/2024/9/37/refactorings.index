@@ -1,0 +1,8 @@
+1725939432221	Rename type 'TrainerInterface'
+1725939446938	Rename type 'JDBCTrainerDao'
+1725940577750	Rename compilation unit 'AdminInterface.java'
+1725941748122	Rename type 'ChargeDao'
+1725942210872	Rename type 'Charge_List'
+1725942222392	Rename type 'Charge_ListDao'
+1725949349418	Rename type 'JDBCCharge_ListDao'
+1726016826632	Copy compilation unit

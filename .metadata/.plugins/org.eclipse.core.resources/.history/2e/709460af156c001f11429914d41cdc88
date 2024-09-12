@@ -1,0 +1,30 @@
+package space.jdbc.Card;
+
+import java.sql.Date;
+
+public class Card {
+
+	private String CardNumber;
+	private Date Accession;
+	private String ApprovalNumber;
+	private String CompanyName;
+	private Date ApprovalDate;
+	
+	Card(){}
+	
+	public Card(String CardNumber, Date Accession) {
+		super();
+		this.CardNumber = CardNumber;
+		this.Accession = Accession;
+	}
+	
+	public Card(String CardNumber, Date Accession,String ApprovalNumber,String CompanyName,Date ApprovalDate) {
+		super();
+		this.CardNumber = CardNumber;
+		this.Accession = Accession;
+		this.ApprovalNumber = ApprovalNumber;
+		this.CompanyName = CompanyName;
+		
+	}
+	
+}

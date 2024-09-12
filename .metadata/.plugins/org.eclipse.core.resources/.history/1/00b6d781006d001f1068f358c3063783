@@ -1,0 +1,5 @@
+package space.jdbc.Card;
+
+public class CardApprovalDetailsDao {
+
+}

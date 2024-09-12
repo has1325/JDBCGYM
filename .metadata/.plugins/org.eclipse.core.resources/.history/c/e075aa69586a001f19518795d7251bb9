@@ -1,0 +1,9 @@
+package space.jdbc.memo;
+
+public class DataSource {
+	
+	private static final String driver = "oracle.jdbc.driver.OracleDriver";
+	private static final String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String username = "system";
+	private static final String password = "a12345";
+}

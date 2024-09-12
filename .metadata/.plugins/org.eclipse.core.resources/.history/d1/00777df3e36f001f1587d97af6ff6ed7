@@ -1,0 +1,87 @@
+package space.jdbc.precure;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import space.jdbc.memo.Memo;
+import 하성.Admin;
+import 하성.DataSource;
+
+public class JdbcPrecureDao implements PrecureDao {
+
+	@Override
+	public boolean insert(Precure precure) {
+		boolean result = false;
+		
+		try(Connection connection = DataSource.getDataSource();
+				PreparedStatement pStatement 
+					= connection.prepareStatement("INSERT INTO PRECURE (ID,NAME,AGE,COLOR,TYPE,BIRTH,ITEM,COMMENTS)"
+							+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
+			
+			pStatement.setInt(1, precure.getId());
+			pStatement.setString(2, precure.getName());
+			pStatement.setInt(3, precure.getAge());
+			pStatement.setString(4, precure.getColor());
+			pStatement.setString(5, precure.getType());
+			pStatement.setDate(6, precure.getBirth());
+			pStatement.setString(7, precure.getItem());
+			pStatement.setString(8, precure.getComments());
+			
+			int rows = pStatement.executeUpdate();
+			
+			if(rows > 0) {
+				result = true;
+			}
+			
+		}	catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public List<Precure> findAll() {
+List<Admin> admin = new ArrayList<Admin>();
+		
+		try (Connection connection = DataSource.getDataSource();
+		PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM ADMIN ORDER BY MANAGER_NUM DESC FETCH FIRST 2 ROWS ONLY");
+		ResultSet rs = pStatement.executeQuery()) {
+		
+		while(rs.next()) {
+			Admin admin2 = new Admin(
+					rs.getInt("manager_num"),
+					rs.getString("position"));
+			
+			admin.add(admin2);
+		}
+		
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return admin;
+	}
+
+	@Override
+	public Memo findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(Precure precure) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

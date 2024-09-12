@@ -1,0 +1,35 @@
+package ch01.sec08;
+
+public class MusicComposer {
+
+    // 간단한 음악 작곡 기능 (AI 대신 단순한 로직)
+    public String composeMusic(String style, String mood) {
+        StringBuilder music = new StringBuilder();
+
+        music.append("스타일: ").append(style).append("\n");
+        music.append("분위기: ").append(mood).append("\n");
+        music.append("생성된 음악 트랙: \n");
+
+        if (style.equalsIgnoreCase("클래식")) {
+            music.append("♪ 클래식 멜로디 ♪");
+        } else if (style.equalsIgnoreCase("팝")) {
+            music.append("♪ 팝 비트 ♪");
+        } else if (style.equalsIgnoreCase("재즈")) {
+            music.append("♪ 재즈 리듬 ♪");
+        } else {
+            music.append("♪ 기본 멜로디 ♪");
+        }
+
+        if (mood.equalsIgnoreCase("행복한")) {
+            music.append(" (밝고 경쾌한 느낌)");
+        } else if (mood.equalsIgnoreCase("슬픈")) {
+            music.append(" (감성적이고 서정적인 느낌)");
+        } else if (mood.equalsIgnoreCase("신나는")) {
+            music.append(" (빠르고 흥겨운 느낌)");
+        } else {
+            music.append(" (기본 분위기)");
+        }
+
+        return music.toString();
+    }
+}

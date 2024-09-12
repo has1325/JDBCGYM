@@ -1,0 +1,48 @@
+package 하성;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
+
+
+
+public class MainTest {
+	public static void main(String[] args) {
+		
+		Admin admin = new Admin();
+		
+		admin.setManager_num(7777);
+		admin.setPosition("테스터");
+		
+		JDBCAdminDao jdbcadmindao = new JDBCAdminDao();
+//		jdbcadmindao.insert(admin);
+		
+		
+//		List<Admin> admin1 = jdbcadmindao.findAll();
+//		for (Admin admin2 : admin1) {
+//			System.out.println(admin2);
+//		}
+		
+		Admin admin2 = new Admin();
+		admin2.setManager_num(3214);
+		admin2.setPosition("테스터");
+		
+		Charge chargeList = new Charge();
+		
+		chargeList.setCharge_num(77);
+		chargeList.setPeriod(Date.valueOf("2025-04-25"));
+		chargeList.setPt_count(3);
+		
+		JDBCChargeDao jdbcchargedao = new JDBCChargeDao();
+		jdbcchargedao.insert(chargeList);
+		
+//		for (Admin charge_list2 : jdbcadmindao.findAll()) {
+//			System.out.println(charge_list2);
+//		}
+		
+//		System.out.println(jdbcadmindao.findByManager_num(7777));
+		
+//		jdbcadmindao.deleteByManager_num(7777);
+		
+	}
+}
