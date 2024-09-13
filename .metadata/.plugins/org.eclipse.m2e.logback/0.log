@@ -26,3 +26,6 @@
 2024-09-13 13:11:36,173 [Worker-86: Remove Repositories] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for [RepositoryHandle:Repository[C:\Users\user\git\sample\.git]]
 2024-09-13 13:13:45,593 [Framework stop - Equinox Container: 3de6629c-1186-4843-a93c-082c2e420e57] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\sample\.git]
 2024-09-13 13:15:34,346 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-09-13 13:39:04,090 [Framework stop - Equinox Container: 175e30bd-2339-4c99-8965-e13663bcab08] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\sample\.git]
+2024-09-13 13:40:31,334 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-09-13 13:51:52,077 [Worker-6: Remove Repositories] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\sample\.git]
