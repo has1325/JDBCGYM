@@ -32,3 +32,8 @@
 2024-09-13 14:47:40,815 [Worker-41: Remove Repositories] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for [RepositoryHandle:Repository[C:\Users\user\git\ex\.git]]
 2024-09-13 14:48:21,613 [Framework stop - Equinox Container: 20d3141e-3ad7-4c2a-9378-3dda287f7295] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\ex\.git]
 2024-09-13 14:53:59,634 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-09-13 16:13:20,225 [Worker-37: Cloning from https://github.com/fdsjkj/sample.git] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\sample\.git]
+2024-09-13 16:14:18,333 [ModalContext] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\sample\sample\sample\.git]
+2024-09-13 16:17:35,250 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-09-13 16:31:34,751 [Worker-12: Cloning from https://github.com/fdsjkj/coding-test.git] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\user\git\coding-test\.git]
+2024-09-13 16:41:26,021 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
