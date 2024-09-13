@@ -1,5 +1,0 @@
-package space.jdbc.memo;
-
-public interface MemoDao {
-
-}

@@ -1,7 +1,0 @@
-package 하성;
-
-public interface TestMain {
-	public static void main(String[] args) {
-		sysout
-	}
-}
