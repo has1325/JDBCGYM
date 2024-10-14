@@ -51,6 +51,13 @@ public class Trainer {
         this.trainer_num = trainer_num;
     }
 
+    public Trainer(Trainer tr)
+    {
+        this.trainer_num = tr.getTrainer_num();
+        this.award = tr.getAward();
+        this.logindata   = tr.getLoginData();
+    }
+
     public int getTrainer_num() {
         return trainer_num;
     }
@@ -107,6 +114,21 @@ public class Trainer {
     public String getName()
     {
         return this.logindata.getName();
+    }
+
+    public LoginData getLoginData()
+    {
+        return this.logindata;
+    }
+    public void setLoginData(LoginData logindata)
+    {
+        this.logindata = logindata;
+    }
+
+
+    public void setMemberType()
+    {
+        this.logindata.setMemberType(LoginData.MEMBERTYPE.TRAINER);
     }
 
     @Override

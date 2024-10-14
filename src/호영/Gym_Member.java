@@ -18,12 +18,19 @@ public class Gym_Member {
 	private int charge_num;
 	
 	public Gym_Member() {
-		loginData = new LoginData();
+		loginData = new LoginData(LoginData.MEMBERTYPE.MEMBER);
 	}
 
 	public Gym_Member(int member_num, String name) {
 		loginData = new LoginData(LoginData.MEMBERTYPE.MEMBER);
 		loginData.setName(name);
+		this.member_num = member_num;
+	}
+
+	public Gym_Member(int member_num, String name, String member_id){
+		loginData = new LoginData(LoginData.MEMBERTYPE.MEMBER);
+		loginData.setName(name);
+		loginData.setLogin_id(member_id);
 		this.member_num = member_num;
 	}
 
@@ -57,6 +64,18 @@ public class Gym_Member {
 		loginData.setGender(gender);
 		loginData.setAge(age);
 		loginData.setName(name);
+	}
+
+	public Gym_Member(int pt_count, String member_id, String member_pw, String gender, int age, String member_name, int trainer_num, int charge_num) {
+		this.pt_count = pt_count;
+		this.trainer_num = trainer_num;
+		this.charge_num = charge_num;
+		loginData = new LoginData(LoginData.MEMBERTYPE.MEMBER);
+		loginData.setLogin_id(member_id);
+		loginData.setLogin_pw(member_pw);
+		loginData.setName(member_name);
+		loginData.setAge(age);
+		loginData.setGender(gender);
 	}
 
 	public int getMember_num() {
@@ -147,11 +166,12 @@ public class Gym_Member {
 		this.charge_num = charge_num;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Member [member_num=" + member_num + ", pt_count=" + pt_count + ", reg_date=" + reg_date + ", exp_date="
-				+ exp_date + ", login_id=" + loginData.getLogin_id() + ", login_pw=" + loginData.getLogin_pw() + ", gender=" + loginData.getGender() + ", age=" + loginData.getAge()
-				+ ", name=" + loginData.getName() + ", trainer_num=" + trainer_num + ", charge_num=" + charge_num + "]";
+		return "[멤버 번호=" + member_num + ", PT 횟수=" + pt_count + ", 등록일=" + reg_date + ", 만료일="
+				+ exp_date + ", login_id=" + loginData.getLogin_id() + ", login_pw=" + loginData.getLogin_pw() + ", 성별=" + loginData.getGender() + ", 연령=" + loginData.getAge()
+				+ ", 성함=" + loginData.getName() + ", trainer_num=" + trainer_num + ", charge_num=" + charge_num + "]";
 	}
 	
 }

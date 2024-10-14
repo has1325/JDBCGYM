@@ -1,5 +1,7 @@
 package 하성;
 
+import DataSource.DataSource;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +16,7 @@ public class JDBCChargeDao implements ChargeDao {
 		boolean result = false;
 		
 		try(Connection connection = DataSource.getDataSource();
-				PreparedStatement pStatement 
+			PreparedStatement pStatement
 					= connection.prepareStatement("INSERT INTO CHARGE (CHARGE_NUM,PERIOD_DATE,PT_COUNT)"
 							+ " VALUES (?, ?, ?)")) {
 			
@@ -40,14 +42,16 @@ public class JDBCChargeDao implements ChargeDao {
 		List<Charge> charge = new ArrayList<Charge>();
 		
 		try (Connection connection = DataSource.getDataSource();
-		PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM CHARGE ORDER BY CHARGE_NUM DESC FETCH FIRST 2 ROWS ONLY");
+		PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM CHARGE ORDER BY CHARGE_NUM DESC");
 		ResultSet rs = pStatement.executeQuery()) {
 		
 		while(rs.next()) {
 			Charge charge2 = new Charge(
 					rs.getInt("charge_num"),
 					rs.getInt("period_date"),
-					rs.getInt("pt_count"));
+					rs.getInt("pt_count"),
+					rs.getString("name")
+			);
 			
 			charge.add(charge2);
 		}
@@ -63,7 +67,7 @@ public class JDBCChargeDao implements ChargeDao {
 		Charge charge = null;
 
 		try(Connection connection = DataSource.getDataSource();
-				PreparedStatement pStatement
+			PreparedStatement pStatement
 					= connection.prepareStatement("SELECT * FROM CHARGE WHERE CHARGE_NUM = ?")){
 			
 			pStatement.setInt(1, num);
@@ -89,11 +93,12 @@ public class JDBCChargeDao implements ChargeDao {
 		
 		try(Connection conn = DataSource.getDataSource();
 			PreparedStatement pStatement
-			= conn.prepareStatement("UPDATE CHARGE SET PERIOD_DATE = ? , PT_COUNT = ? WHERE CHARGE_NUM = ?")){
+			= conn.prepareStatement("UPDATE CHARGE SET PERIOD_DATE = ? , PT_COUNT = ?, NAME = ? WHERE CHARGE_NUM = ?")){
 		
 			pStatement.setInt(1, chargeList.getPeriod_date());
 			pStatement.setInt(2, chargeList.getPt_count());
-			pStatement.setInt(3, chargeList.getCharge_num());
+			pStatement.setString(3, chargeList.getName());
+			pStatement.setInt(4, chargeList.getCharge_num());
 			
 			int affectedRows = pStatement.executeUpdate();
 				
